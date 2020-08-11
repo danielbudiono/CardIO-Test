@@ -7,12 +7,13 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.idemia.tec.jkt.cardiotest.controller.RfmGsmController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.idemia.tec.jkt.cardiotest.controller.RfmGsmController">
   <children>
     <ScrollPane prefHeight="630.0" prefWidth="1530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <content>
@@ -41,7 +42,10 @@
                         <Label text="EF" GridPane.rowIndex="1" />
                         <Label text="EF (bad case)" GridPane.rowIndex="2" />
                         <TextField fx:id="txtRfmGsmTar" GridPane.columnIndex="1" />
-                        <TextField fx:id="txtRfmGsmTargetEf" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtRfmGsmTargetEf" onMouseDragOver="#handleTextHover" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <tooltip>
+                                          <Tooltip fx:id="ttFidFullPath" text="Insert FID or Full Path" />
+                                       </tooltip></TextField>
                         <TextField fx:id="txtRfmGsmTargetEfBadCase" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                       </children>
                     </GridPane>

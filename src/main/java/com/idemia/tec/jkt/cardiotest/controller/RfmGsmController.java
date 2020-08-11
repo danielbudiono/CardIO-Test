@@ -47,11 +47,16 @@ public class RfmGsmController {
     @FXML private Label lblRfmGsmKid;
     @FXML private CheckBox chkRfmGsmCustomKid;
     @FXML private TextField txtRfmGsmCustomKid;
+    @FXML private Tooltip ttFidFullPath;
 
     @Autowired private RootLayoutController root;
     @Autowired private CardiotestController cardiotest;
 
     public RfmGsmController() {}
+
+    @FXML private void handleTextHover() {
+        txtRfmGsmTargetEf.setTooltip(ttFidFullPath);
+    }
 
     @FXML private void initialize() {
         chkIncludeRfmGsm.setSelected(root.getRunSettings().getRfmGsm().isIncludeRfmGsm());
